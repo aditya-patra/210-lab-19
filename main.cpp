@@ -61,16 +61,13 @@ class Movies {
                 return;
             }
             int i = 0;
-            float sum = 0;
             while (head != nullptr) {
                 i++;
-                sum += head->rating;
                 cout << "Review " << i << ": " << endl;
                 cout << "Rating: " << head->rating << endl;
                 cout << "Comments: " << head->comment << endl << endl;
                 head = head->next;
-            }
-            cout << endl << "Average Rating: " << (sum / i) << endl;    
+            }   
         }
 
         void deleteList() {
@@ -87,23 +84,31 @@ class Movies {
 
 int main() {
     Review *head = nullptr;
-    Review *temp;
     string name;
     float rating;
     string comment;
-    ifstream file("Movie1.txt");
+    int randint;
+    ifstream file1("Movie1.txt");
     string line;
     vector<Movies> movies;
-    if(file.good()) {
-        getline(file, line);
-        name = line;
-        for (int i = 0; i < 3; i++) {
-            getline(file, line);
-            comment = line;
-        }
-        temp = 
-        movies.push_back()
-    }
 
+    // read first file
+    if(file1.good()) {
+        getline(file1, line);
+        name = line;
+        Movies temp = Movies(name);
+        for (int i = 0; i < 3; i++) {
+            getline(file1, line);
+            comment = line;
+            int randint = rand();
+            rating = (double)(rand() * 10) - (randint / 5) + 5;
+            temp.addHead(rating, comment);
+        }
+        movies.push_back(temp);
+    }
+    for(int i = 0; i < movies.size(); i++) {
+        movies[i].printMovieReviews();
+        movies[i].deleteList();
+    }
     return 0;
 }
