@@ -89,6 +89,9 @@ int main() {
     string comment;
     int randint;
     ifstream file1("Movie1.txt");
+    ifstream file2("Movie2.txt");
+    ifstream file3("Movie3.txt");
+    ifstream file4("Movie4.txt");
     string line;
     vector<Movies> movies;
 
@@ -99,6 +102,48 @@ int main() {
         Movies temp = Movies(name);
         for (int i = 0; i < 3; i++) {
             getline(file1, line);
+            comment = line;
+            int randint = rand();
+            rating = (double)(rand() % 50) / 10 + 1;
+            temp.addHead(rating, comment);
+        }
+        movies.push_back(temp);
+    }
+    // read second file
+    if(file2.good()) {
+        getline(file2, line);
+        name = line;
+        Movies temp = Movies(name);
+        for (int i = 0; i < 3; i++) {
+            getline(file2, line);
+            comment = line;
+            int randint = rand();
+            rating = (double)(rand() % 50) / 10 + 1;
+            temp.addHead(rating, comment);
+        }
+        movies.push_back(temp);
+    }
+    // read third file
+    if(file3.good()) {
+        getline(file3, line);
+        name = line;
+        Movies temp = Movies(name);
+        for (int i = 0; i < 3; i++) {
+            getline(file3, line);
+            comment = line;
+            int randint = rand();
+            rating = (double)(rand() % 50) / 10 + 1;
+            temp.addHead(rating, comment);
+        }
+        movies.push_back(temp);
+    }
+    // read fourth file
+    if(file4.good()) {
+        getline(file4, line);
+        name = line;
+        Movies temp = Movies(name);
+        for (int i = 0; i < 3; i++) {
+            getline(file4, line);
             comment = line;
             int randint = rand();
             rating = (double)(rand() % 50) / 10 + 1;
