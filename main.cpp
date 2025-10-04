@@ -5,8 +5,7 @@ Lab 19
 
 Purpose:
 Create linked list of movie Review
-Create vector of movies that have been reviewed from file of movie names
-
+Create vector of movies that have been reviewed from file of movie comments
 */
 #include <iostream>
 #include <string>
@@ -32,8 +31,22 @@ class Movies {
         string getName() {
             return name;
         }
-        string addToList
-}
+        Review addHead(float rating, string comment) {
+            Review * temp = new Review;
+            if (!head) {
+                head = temp;
+                temp->next = nullptr;
+                temp->rating = rating;
+                temp->comment = comment;
+            }
+            else {
+                temp->next = head;
+                temp->rating = rating;
+                temp->comment = comment;
+                head = temp;
+            }   
+        }
+};
 
 void printList(Review *);
 void addHead(Review * &, float, string);
