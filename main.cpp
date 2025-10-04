@@ -87,6 +87,7 @@ class Movies {
 
 int main() {
     Review *head = nullptr;
+    Review *temp;
     string name;
     float rating;
     string comment;
@@ -100,6 +101,8 @@ int main() {
             getline(file, line);
             comment = line;
         }
+        temp = 
+        movies.push_back()
     }
 
     return 0;
