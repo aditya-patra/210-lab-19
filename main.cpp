@@ -101,7 +101,7 @@ int main() {
             getline(file1, line);
             comment = line;
             int randint = rand();
-            rating = (double)(rand() * 10) - (randint / 5) + 5;
+            rating = (double)(rand() % 50) / 10 + 1;
             temp.addHead(rating, comment);
         }
         movies.push_back(temp);
